@@ -146,6 +146,21 @@
   .letter-wrap h2{ color:#fff; text-align:center; margin-bottom:30px; }
   .letter-wrap p{ line-height:1.95; font-size:1.08rem; margin-bottom:18px; }
   .signature{ margin-top:30px; font-family:'Playfair Display', serif; font-style:italic; font-size:1.2rem; text-align:right;}
+  .letter-photo{
+    width:160px; height:160px; border-radius:50%; overflow:hidden; margin:0 auto 30px;
+    border:5px solid rgba(255,255,255,.6); box-shadow:0 14px 30px rgba(0,0,0,.2);
+  }
+  .letter-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ---------- language toggle ---------- */
+  .lang-toggle{
+    position:fixed; top:18px; right:18px; z-index:50;
+    background:#fff; border:1px solid var(--green-soft); color:var(--green-deep);
+    font-family:'Quicksand', sans-serif; font-weight:700; font-size:.8rem;
+    padding:8px 16px; border-radius:30px; cursor:pointer;
+    box-shadow:0 6px 18px rgba(111,163,123,.25); letter-spacing:1px;
+  }
+  .lang-toggle:hover{ background:var(--green-pale); }
 
   /* ---------- closing ---------- */
   .closing{
@@ -164,6 +179,8 @@
 
 <div class="leaf-bg"></div>
 
+<button class="lang-toggle" id="lang-toggle">TR</button>
+
 <!-- HERO -->
 <section class="hero">
   <div class="balloon b1"></div>
@@ -172,26 +189,26 @@
   <div class="balloon b4"></div>
   <div class="balloon b5"></div>
 
-  <div class="eyebrow">June 23rd</div>
-  <h1>Happy Birthday,<br><em>Doğa</em></h1>
-  <p class="sub">This is your journey, sister — every mile of it, and how wonderful you are because of it.</p>
+  <div class="eyebrow" data-en="June 23rd" data-tr="23 Haziran">June 23rd</div>
+  <h1 data-en-html="Happy Birthday,<br><em>Doğa</em>" data-tr-html="İyi ki Doğdun,<br><em>Doğa</em>">Happy Birthday,<br><em>Doğa</em></h1>
+  <p class="sub" data-en="This is your journey, sister — every mile of it, and how wonderful you are because of it." data-tr="Bu senin yolculuğun, kardeşim — her kilometresi, ve seni ne kadar harika biri yaptığı.">This is your journey, sister — every mile of it, and how wonderful you are because of it.</p>
 
   <div class="countdown" id="countdown">
-    <div class="box"><span class="num" id="cd-days">--</span><span class="label">Days</span></div>
-    <div class="box"><span class="num" id="cd-hours">--</span><span class="label">Hours</span></div>
-    <div class="box"><span class="num" id="cd-mins">--</span><span class="label">Minutes</span></div>
-    <div class="box"><span class="num" id="cd-secs">--</span><span class="label">Seconds</span></div>
+    <div class="box"><span class="num" id="cd-days">--</span><span class="label" data-en="Days" data-tr="Gün">Days</span></div>
+    <div class="box"><span class="num" id="cd-hours">--</span><span class="label" data-en="Hours" data-tr="Saat">Hours</span></div>
+    <div class="box"><span class="num" id="cd-mins">--</span><span class="label" data-en="Minutes" data-tr="Dakika">Minutes</span></div>
+    <div class="box"><span class="num" id="cd-secs">--</span><span class="label" data-en="Seconds" data-tr="Saniye">Seconds</span></div>
   </div>
 
-  <div class="scroll-cue">↓ scroll down for your story ↓</div>
+  <div class="scroll-cue" data-en="↓ scroll down for your story ↓" data-tr="↓ hikayeni görmek için kaydır ↓">↓ scroll down for your story ↓</div>
 </section>
 
 <!-- INTRO -->
 <section>
   <div class="section-head">
-    <div class="eyebrow">Our Story</div>
-    <h2>Two Kids From Istanbul</h2>
-    <p>We started in the same small world, side by side. Life pulled us across oceans more than once — but every time, we found our way back to each other. This is that journey.</p>
+    <div class="eyebrow" data-en="Our Story" data-tr="Hikayemiz">Our Story</div>
+    <h2 data-en="Two Kids From Istanbul" data-tr="İstanbul'dan İki Çocuk">Two Kids From Istanbul</h2>
+    <p data-en="We started in the same small world, side by side. Life pulled us across oceans more than once — but every time, we found our way back to each other. This is that journey." data-tr="Aynı küçük dünyada, yan yana başladık. Hayat bizi birden fazla kez okyanusların ötesine savurdu — ama her seferinde birbirimize geri dönmenin bir yolunu bulduk. İşte o yolculuk bu.">We started in the same small world, side by side. Life pulled us across oceans more than once — but every time, we found our way back to each other. This is that journey.</p>
   </div>
 </section>
 
@@ -201,57 +218,57 @@
 
     <div class="t-item">
       <div class="dot"></div>
-      <div class="year">Istanbul, Turkey</div>
-      <h3>The Beginning</h3>
-      <p>We were born and raised in Istanbul — two siblings growing up side by side, long before we knew how much we'd come to need each other.</p>
+      <div class="year" data-en="Istanbul, Turkey" data-tr="İstanbul, Türkiye">Istanbul, Turkey</div>
+      <h3 data-en="The Beginning" data-tr="Başlangıç">The Beginning</h3>
+      <p data-en="We were born and raised in Istanbul — two siblings growing up side by side, long before we knew how much we'd come to need each other." data-tr="İstanbul'da doğduk ve büyüdük — birbirimize ne kadar ihtiyacımız olacağını bilmeden, yan yana büyüyen iki kardeş.">We were born and raised in Istanbul — two siblings growing up side by side, long before we knew how much we'd come to need each other.</p>
       <div class="photo-frame"><span class="placeholder-emoji">🌿</span><img src="images/istanbul.jpg" alt="Istanbul" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
     <div class="t-item">
       <div class="dot"></div>
       <div class="year">2012</div>
-      <h3>The Hardest Year</h3>
-      <p>Our parents divorced. You were 9, I was 12. The world suddenly felt smaller and a lot scarier — but we had each other to lean on, to understand each other when no one else quite could. That was enough to hold on to.</p>
+      <h3 data-en="The Hardest Year" data-tr="En Zor Yıl">The Hardest Year</h3>
+      <p data-en="Our parents divorced. You were 9, I was 12. The world suddenly felt smaller and a lot scarier — but we had each other to lean on, to understand each other when no one else quite could. That was enough to hold on to." data-tr="Annemiz ve babamız boşandı. Sen 9, ben 12 yaşındaydım. Dünya birden küçülüp daha korkutucu bir yer haline geldi — ama birbirimize yaslanacak, birbirimizi anlayacak biri vardı. Bu, tutunmaya yetti.">Our parents divorced. You were 9, I was 12. The world suddenly felt smaller and a lot scarier — but we had each other to lean on, to understand each other when no one else quite could. That was enough to hold on to.</p>
       <div class="photo-frame"><span class="placeholder-emoji">🌱</span><img src="images/2012.jpg" alt="2012" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
     <div class="t-item">
       <div class="dot"></div>
       <div class="year">2016</div>
-      <h3>An Ocean Apart</h3>
-      <p>I moved to the USA with Dad. It was the first time we were really separated — and it wouldn't be the last.</p>
+      <h3 data-en="An Ocean Apart" data-tr="Bir Okyanus Kadar Uzak">An Ocean Apart</h3>
+      <p data-en="I moved to the USA with Dad. It was the first time we were really separated — and it wouldn't be the last." data-tr="Babamla Amerika'ya taşındım. Gerçekten ayrıldığımız ilk zamandı — ve son olmayacaktı.">I moved to the USA with Dad. It was the first time we were really separated — and it wouldn't be the last.</p>
       <div class="photo-frame"><span class="placeholder-emoji">✈️</span><img src="images/2016.jpg" alt="2016" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
     <div class="t-item">
       <div class="dot"></div>
       <div class="year">2017</div>
-      <h3>Worlds Apart</h3>
-      <p>You moved to Australia with Mom. Two siblings, two continents, thousands of miles between us — but a bond that distance never managed to break.</p>
+      <h3 data-en="Worlds Apart" data-tr="Dünyalar Kadar Uzak">Worlds Apart</h3>
+      <p data-en="You moved to Australia with Mom. Two siblings, two continents, thousands of miles between us — but a bond that distance never managed to break." data-tr="Annemle Avustralya'ya taşındın. İki kardeş, iki kıta, aramızda binlerce kilometre — ama mesafenin asla kırmayı başaramadığı bir bağ.">You moved to Australia with Mom. Two siblings, two continents, thousands of miles between us — but a bond that distance never managed to break.</p>
       <div class="photo-frame"><span class="placeholder-emoji">🌏</span><img src="images/2017.jpg" alt="2017" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
     <div class="t-item">
       <div class="dot"></div>
       <div class="year">2018</div>
-      <h3>The Reunion</h3>
-      <p>I saw you again. I remember crying — I felt like I had been missing a piece of myself, and for a moment, holding you, I was whole again.</p>
+      <h3 data-en="The Reunion" data-tr="Yeniden Buluşma">The Reunion</h3>
+      <p data-en="I saw you again. I remember crying — I felt like I had been missing a piece of myself, and for a moment, holding you, I was whole again." data-tr="Seni yeniden gördüm. Ağladığımı hatırlıyorum — kendimden bir parçayı kaybetmiş gibi hissediyordum ve seni kucakladığım o an, yeniden bütün oldum.">I saw you again. I remember crying — I felt like I had been missing a piece of myself, and for a moment, holding you, I was whole again.</p>
       <div class="photo-frame"><span class="placeholder-emoji">💚</span><img src="images/2018-reunion.jpg" alt="2018 Reunion" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
     <div class="t-item">
       <div class="dot"></div>
       <div class="year">2021</div>
-      <h3>Together Again</h3>
-      <p>You moved to the USA. After years of distance and waiting, we were finally in the same place again — for good this time.</p>
+      <h3 data-en="Together Again" data-tr="Yeniden Birlikte">Together Again</h3>
+      <p data-en="You moved to the USA. After years of distance and waiting, we were finally in the same place again — for good this time." data-tr="Amerika'ya taşındın. Yıllarca süren mesafe ve beklemenin ardından, sonunda yeniden aynı yerdeydik — bu sefer kalıcı olarak.">You moved to the USA. After years of distance and waiting, we were finally in the same place again — for good this time.</p>
       <div class="photo-frame"><span class="placeholder-emoji">🏡</span><img src="images/2021.jpg" alt="2021" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
     <div class="t-item">
       <div class="dot"></div>
-      <div class="year">Today</div>
-      <h3>Side by Side</h3>
-      <p>Now we live together, and we even work at the same company — Microsoft. You overcame challenges that would have broken most people, and through all of it, you never stopped believing in yourself. I never stopped believing in you either. I knew you'd achieve everything you set your mind to, and I gave everything I had to help get you there.</p>
+      <div class="year" data-en="Today" data-tr="Bugün">Today</div>
+      <h3 data-en="Side by Side" data-tr="Yan Yana">Side by Side</h3>
+      <p data-en="Now we live together, and we even work at the same company — Microsoft. You overcame challenges that would have broken most people, and through all of it, you never stopped believing in yourself. I never stopped believing in you either. I knew you'd achieve everything you set your mind to, and I gave everything I had to help get you there." data-tr="Şimdi birlikte yaşıyoruz, hatta aynı şirkette çalışıyoruz — Microsoft'ta. Birçok insanı yıkacak zorlukların üstesinden geldin ve bütün bu süreçte kendine inanmaktan asla vazgeçmedin. Ben de sana inanmaktan asla vazgeçmedim. Aklına koyduğun her şeyi başaracağını biliyordum ve seni oraya götürmek için elimden geleni yaptım.">Now we live together, and we even work at the same company — Microsoft. You overcame challenges that would have broken most people, and through all of it, you never stopped believing in yourself. I never stopped believing in you either. I knew you'd achieve everything you set your mind to, and I gave everything I had to help get you there.</p>
       <div class="photo-frame"><span class="placeholder-emoji">✨</span><img src="images/today.jpg" alt="Today" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()"></div>
     </div>
 
@@ -261,24 +278,25 @@
 <!-- LETTER -->
 <section>
   <div class="letter-wrap">
-    <h2>To My Sister</h2>
+    <div class="letter-photo"><img src="images/personalnote.jpg" alt="Us"></div>
+    <h2 data-en="To My Sister" data-tr="Kardeşime">To My Sister</h2>
     <p>Doğa,</p>
-    <p>I love you, sister. I will always love you.</p>
-    <p>We can fight sometimes — but that never changes the fact that I will always be there for you.</p>
-    <p>I might not be there on every one of your best days, but I need you to know: I will always be there on your hardest ones.</p>
-    <p>Happy Birthday. I'm so proud of who you are and everything you've become.</p>
-    <div class="signature">— Your brother</div>
+    <p data-en="I love you, sister. I will always love you." data-tr="Seni seviyorum, kardeşim. Seni her zaman seveceğim.">I love you, sister. I will always love you.</p>
+    <p data-en="We can fight sometimes — but that never changes the fact that I will always be there for you." data-tr="Bazen kavga edebiliriz — ama bu, senin için her zaman orada olacağım gerçeğini asla değiştirmez.">We can fight sometimes — but that never changes the fact that I will always be there for you.</p>
+    <p data-en="I might not be there on every one of your best days, but I need you to know: I will always be there on your hardest ones." data-tr="En güzel günlerinde her zaman yanında olamayabilirim, ama bilmeni istiyorum: en zor günlerinde her zaman yanında olacağım.">I might not be there on every one of your best days, but I need you to know: I will always be there on your hardest ones.</p>
+    <p data-en="Happy Birthday. I'm so proud of who you are and everything you've become." data-tr="İyi ki doğdun. Kim olduğunla ve bugün ulaştığın her şeyle çok gurur duyuyorum.">Happy Birthday. I'm so proud of who you are and everything you've become.</p>
+    <div class="signature" data-en="— Your brother" data-tr="— Kardeşin">— Your brother</div>
   </div>
 </section>
 
 <!-- CLOSING -->
 <section class="closing">
-  <h2>Happy Birthday, Doğa.</h2>
-  <p>Here's to the girl who never stopped believing in herself, and the brother who never stopped believing in her either. I love you, sister.</p>
+  <h2 data-en="Happy Birthday, Doğa." data-tr="İyi ki Doğdun, Doğa.">Happy Birthday, Doğa.</h2>
+  <p data-en="Here's to the girl who never stopped believing in herself, and the brother who never stopped believing in her either. I love you, sister." data-tr="Kendine inanmaktan asla vazgeçmeyen bir kıza ve ona inanmaktan asla vazgeçmeyen bir kardeşe… Seni seviyorum, kardeşim.">Here's to the girl who never stopped believing in herself, and the brother who never stopped believing in her either. I love you, sister.</p>
   <div class="hearts">💚 💚 💚</div>
 </section>
 
-<footer>Made with love by your brother</footer>
+<footer data-en="Made with love by your brother" data-tr="Kardeşin tarafından sevgiyle yapıldı">Made with love by your brother</footer>
 
 <script>
   // countdown to next June 23
@@ -314,6 +332,24 @@
     });
   }, { threshold: 0.2 });
   items.forEach(item => observer.observe(item));
+
+  // language toggle (English / Turkish)
+  const langToggle = document.getElementById('lang-toggle');
+  function applyLang(lang){
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = lang === 'tr' ? el.getAttribute('data-tr') : el.getAttribute('data-en');
+    });
+    document.querySelectorAll('[data-en-html]').forEach(el => {
+      el.innerHTML = lang === 'tr' ? el.getAttribute('data-tr-html') : el.getAttribute('data-en-html');
+    });
+    document.documentElement.lang = lang;
+    langToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
+    localStorage.setItem('doga-lang', lang);
+  }
+  langToggle.addEventListener('click', () => {
+    applyLang(document.documentElement.lang === 'tr' ? 'en' : 'tr');
+  });
+  applyLang(localStorage.getItem('doga-lang') || 'en');
 </script>
 
 </body>
